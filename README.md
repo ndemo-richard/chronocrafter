@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Rick & Morty Explorer Documentation
+Overview
+Rick & Morty Explorer is an application built to explore locations, residents, and characters from the Rick & Morty universe. The app retrieves data from the Rick & Morty API, allowing users to search for locations by name, character name, or episode name. It displays detailed information about each location, including its residents, and allows users to view individual character details and add notes about them.
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Features
+Retrieve a list of locations along with their residents and character details.
+Search or filter locations by name, character name, or episode name.
+Display detailed information about each location, including residents' names, statuses, and images.
+Navigate to a separate page for each resident to view their details.
+Add persisted notes about characters.
+Technologies Used
+Frontend: Next.js, React, TypeScript, TailwindCSS
+Backend: Node.js, Express
+API: Rick & Morty API (REST)
+Persistence: Local Storage
+Design Decisions
+REST API: We chose to use the REST API provided by the Rick & Morty API due to its simplicity and suitability for our project requirements. The data provided by the API is well-structured and sufficient for our application's needs.
+Next.js: Next.js was chosen for the frontend to leverage its server-side rendering capabilities, which improve SEO and initial loading times. Its built-in routing system also makes it easy to create dynamic and responsive web applications.
+TailwindCSS: TailwindCSS was used for styling the UI components. Its utility-first approach allowed us to rapidly develop a visually appealing interface without writing custom CSS.
+Implementation Details
+Frontend
+Pages: The Next.js pages directory contains the main components for rendering different views, such as the homepage, location details page, and resident details page.
+Components: Components are used to modularize UI elements such as search filters, location cards, and resident cards. These components are reused across multiple pages for consistency and maintainability.
+State Management: React hooks such as useState and useEffect are used for managing state and side effects. Local storage is used for persisting user data such as resident notes.
+Backend
+Server: Node.js with Express is used to create a backend server. It serves as a proxy for fetching data from the Rick & Morty API and serving it to the frontend.
+API Endpoints: The backend exposes REST API endpoints for fetching location data, resident data, and resident details. Each endpoint handles requests from the frontend and communicates with the Rick & Morty API to retrieve the necessary data.
+Future Improvements
+User Authentication: Implement user authentication to allow users to save their preferences and notes securely.
+Database Integration: Integrate a database such as MongoDB to store user data and improve scalability and data management.
+Improved Search Functionality: Enhance the search/filter feature to support more complex queries and provide better search results.
+Conclusion
+Rick & Morty Explorer is a functional and user-friendly application for exploring locations and characters from the Rick & Morty universe. Its intuitive interface, combined with its seamless integration of data from the Rick & Morty API, provides an engaging experience for fans of the show. With its modular architecture and use of modern web technologies, the application is well-equipped for future enhancements and scalability.

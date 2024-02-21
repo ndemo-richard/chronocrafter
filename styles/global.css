@@ -1,0 +1,28 @@
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Box-sizing border-box for all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin from the body */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif; /* Example font, assuming it's included in your project */
+}
+
+/* Global typography settings */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Custom utility classes or component styles can be added here */
