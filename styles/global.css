@@ -11,6 +11,7 @@
 /* Remove default margin from the body */
 body {
   margin: 0;
+  background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url('https://source.unsplash.com/OVqrDBM0afM');
   font-family: 'Inter', sans-serif; /* Example font, assuming it's included in your project */
 }
 

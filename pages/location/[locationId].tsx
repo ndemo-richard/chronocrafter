@@ -42,7 +42,7 @@ const LocationDetailPage = () => {
   }, [locationId]);
 
   return (
-    <div className="container mx-auto p-4">
+    <div className=" container mx-auto p-4 text-white">
       <Head>
         <title>Location Details</title>
       </Head>
@@ -55,7 +55,7 @@ const LocationDetailPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {residents.map((resident: Resident) => (
               <Link key={resident.id} href={`/character/${resident.id}`} passHref>
-                <div className="p-4 border rounded-lg cursor-pointer hover:bg-gray-100">
+                <div className="p-4 border rounded-lg cursor-pointer hover:bg-lime-950">
                   <img src={resident.image} alt={resident.name} className="mb-2" />
                   <p>{resident.name}</p>
                   <p className="text-sm">{resident.status}</p>
