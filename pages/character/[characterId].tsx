@@ -51,7 +51,7 @@ const CharacterDetailPage = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 text-white">
+    <div className="container mx-auto p-4 text-white relative">
       <Head>
         <title>Character Details</title>
       </Head>
@@ -67,9 +67,15 @@ const CharacterDetailPage = () => {
               value={notes}
               onChange={handleNoteChange}
             ></textarea>
-            <button type="submit" className="mt-2 px-4 py-2 bg-blue-500 text-white text-justify rounded-lg">Save Note</button>
+            <button type="submit" className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg">Save Note</button>
           </form>
-          {saved && <div className="absolute top-0 right-0 bg-green-500 text-white px-4 py-2 mt-4 mr-4 rounded-lg">Note saved!</div>}
+          {saved && (
+            <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center z-50">
+              <div className="bg-green-500 text-white px-4 py-2 rounded-lg">
+                Note saved!
+              </div>
+            </div>
+          )}
           <Link href="/">
             <div className="mt-4 inline-block bg-amber-950 px-4 py-2 rounded hover:bg-gray-950">Back to Home</div>
           </Link>
@@ -80,4 +86,3 @@ const CharacterDetailPage = () => {
 };
 
 export default CharacterDetailPage;
-
