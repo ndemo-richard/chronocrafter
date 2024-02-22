@@ -16,6 +16,7 @@ const CharacterDetailPage = () => {
   const { characterId } = router.query;
   const [character, setCharacter] = useState<Character | null>(null);
   const [notes, setNotes] = useState('');
+  const [saved, setSaved] = useState(false); // State to track whether the note has been saved
 
   useEffect(() => {
     if (!characterId) return;
@@ -37,10 +38,16 @@ const CharacterDetailPage = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    //  implement the logic to save the note persistently
+    // Implement the logic to save the note persistently
     console.log('Saving note:', notes);
     // Reset note input after saving
     setNotes('');
+    // Set saved state to true to show the popup
+    setSaved(true);
+    // Reset saved state after 3 seconds
+    setTimeout(() => {
+      setSaved(false);
+    }, 3000);
   };
 
   return (
@@ -55,13 +62,14 @@ const CharacterDetailPage = () => {
           <p>Status: {character.status}</p>
           <form onSubmit={handleSubmit} className="mt-4">
             <textarea
-              className="w-full p-2 border border-gray-300 rounded-lg"
+              className="w-full p-2 border border-gray-300 rounded-lg text-black"
               placeholder="Add notes about this character..."
               value={notes}
               onChange={handleNoteChange}
             ></textarea>
-            <button type="submit" className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg">Save Note</button>
+            <button type="submit" className="mt-2 px-4 py-2 bg-blue-500 text-white text-justify rounded-lg">Save Note</button>
           </form>
+          {saved && <div className="absolute top-0 right-0 bg-green-500 text-white px-4 py-2 mt-4 mr-4 rounded-lg">Note saved!</div>}
           <Link href="/">
             <div className="mt-4 inline-block bg-amber-950 px-4 py-2 rounded hover:bg-gray-950">Back to Home</div>
           </Link>
@@ -72,3 +80,4 @@ const CharacterDetailPage = () => {
 };
 
 export default CharacterDetailPage;
+
